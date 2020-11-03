@@ -41,6 +41,8 @@ int			ft_atoi(const char *str)
 		minus = -1;
 		str++;
 	}
+	else if (*str == '+')
+		str++;
 	while (*str && ft_isdigit(*str))
 	{
 		number = number * 10 + *str - '0';
@@ -51,7 +53,7 @@ int			ft_atoi(const char *str)
 
 int			main(void)
 {
-	char *num = " 	  -2gfg423d25521";
+	char *num = "+47+5";
 	printf("%d - ft_atoi\n%d - true atoi", ft_atoi(num), atoi(num));
 	return (0);
 }
