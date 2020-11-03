@@ -1,0 +1,9 @@
+
+a.out
+*copy*
+*.o
+*old*
+*example*
+*test*
+libft.a
+.DS_Store
