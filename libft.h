@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+//PART I
 //memset
 //bzero
 //memcpy
@@ -33,12 +34,36 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
-//toupper
-//tolower
+int					ft_toupper(int c);
+int					ft_tolower(int c);
 //
 //calloc
 //strdup
 
+//PART II
+//ft_substr
+//ft_strjoin
+//ft_strtrim
+//ft_split
+//ft_itoa
+//ft_strmapi
+//ft_putchar_fd
+//ft_putstr_fd
+//ft_putendl_fd
+//ft_putnbr_fd
+
+//BONUS
+//ft_lstnew
+//ft_lstadd_front
+//ft_lstsizej
+//ft_lstlast
+//ft_lstadd_back
+//ft_lstdelone
+//ft_lstclear
+//ft_lstiter
+//ft_lstmap
+
 //MEINE
 int					ft_isspace(int c);
+
 #endif

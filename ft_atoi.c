@@ -26,8 +26,8 @@ static int	ft_isdigit(int c)
 
 int			ft_atoi(const char *str)
 {
-	int minus;
-	int number;
+	int					minus;
+	unsigned long int	number;
 
 	number = 0;
 	minus = 1;
@@ -45,5 +45,5 @@ int			ft_atoi(const char *str)
 		number = number * 10 + *str - '0';
 		str++;
 	}
-	return (number * minus);
+	return ((int)(number * minus));
 }
