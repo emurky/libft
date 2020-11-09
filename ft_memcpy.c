@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 20:16:35 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/02 20:16:37 by emurky           ###   ########.fr       */
+/*   Created: 2020/11/09 04:16:24 by emurky            #+#    #+#             */
+/*   Updated: 2020/11/09 04:16:26 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		minus;
-	size_t	number;
+	unsigned char		*dstptr;
+	const unsigned char	*srcptr;
 
-	number = 0;
-	minus = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			minus = -1;
-		str++;
-	}
-	while (*str && ft_isdigit(*str))
-		number = number * 10 + *str++ - '0';
-	return ((int)(number * minus));
+	if (!dst && !src)
+		return (0);
+	dstptr = dst;
+	srcptr = src;
+	while (n--)
+		*dstptr++ = *srcptr++;
+	return (dst);
 }

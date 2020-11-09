@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 20:16:35 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/02 20:16:37 by emurky           ###   ########.fr       */
+/*   Created: 2020/11/09 04:54:18 by emurky            #+#    #+#             */
+/*   Updated: 2020/11/09 04:54:20 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int		minus;
-	size_t	number;
+	unsigned char		*dstptr;
+	const unsigned char	*srcptr;
 
-	number = 0;
-	minus = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-' || *str == '+')
+	if (!dst && !src)
+		return (0);
+	dstptr = dst;
+	srcptr = src;
+	while (n-- && *srcptr != (unsigned char)c)
+		*dstptr++ = *srcptr++;
+	if (*srcptr == (unsigned char)c)
 	{
-		if (*str == '-')
-			minus = -1;
-		str++;
+		*dstptr = *srcptr;
+		return (++dstptr);
 	}
-	while (*str && ft_isdigit(*str))
-		number = number * 10 + *str++ - '0';
-	return ((int)(number * minus));
+	else
+		return (0);
 }
