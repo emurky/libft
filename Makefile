@@ -6,7 +6,7 @@
 #    By: emurky <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 18:08:11 by emurky            #+#    #+#              #
-#    Updated: 2020/11/03 21:52:34 by emurky           ###   ########.fr        #
+#    Updated: 2020/11/13 01:31:32 by emurky           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,31 +17,32 @@ OBJS 			= $(SRCS:.c=.o)
 
 NAME 			= libft.a
 
-CC 				= gcc
-RM 				= rm -f
-LIB				= ar rc
-
+CC 			= gcc
+RM 			= rm -f
+AR			= ar rcs
+RLIB   			= ranlib
 CFLAGS 			= -Wall -Wextra -Werror
 
 $(NAME):		$(OBJS)
-				$(LIB) $(NAME) $(OBJS)
+			$(AR) $(NAME) $(OBJS)
+			$(RLIB) $(NAME)
 
 all:			$(NAME)
 
 clean:
-				$(RM) $(OBJS)
+			$(RM) $(OBJS) a.out
 
 
 
 fclean:			clean
-				$(RM) $(NAME)
+			$(RM) $(NAME)
 
-re:				fclean all
+re:			fclean all
 
 .PHONY:			all clean fclean re
 #.SILENT:
 
 
 
-#				$(CC) $(CFLAGS) -c $(OBJS)
+#			$(CC) $(CFLAGS) -c $(OBJS)
 			

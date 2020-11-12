@@ -13,6 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
+//REMOVE
+# include <stdio.h>
+# include <string.h>
 
 //PART I
 void				*ft_memset(void *b, int c, size_t len);
