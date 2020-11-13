@@ -14,9 +14,10 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+
 //REMOVE
-# include <stdio.h>
-# include <string.h>
+//# include <stdio.h>
+//# include <string.h>
 
 //PART I
 void				*ft_memset(void *b, int c, size_t len);
@@ -41,9 +42,9 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-//
-//calloc
-//strdup
+
+void				*ft_calloc(size_t count, size_t size);
+char				*ft_strdup(const char *s1);
 
 //PART II
 //ft_substr
