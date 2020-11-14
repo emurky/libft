@@ -53,9 +53,9 @@ char				*ft_strdup(const char *s1);
 //ft_split
 //ft_itoa
 //ft_strmapi
-//ft_putchar_fd
-//ft_putstr_fd
-//ft_putendl_fd
+void				ft_putchar_fd(char c, int fd);
+void				ft_putstr_fd(char *s, int fd);
+void				ft_putendl_fd(char *s, int fd);
 //ft_putnbr_fd
 
 //BONUS
@@ -71,5 +71,8 @@ char				*ft_strdup(const char *s1);
 
 //MEINE
 int					ft_isspace(int c);
+void				ft_putchar(char c);
+void				ft_putstr(char *s);
+void				ft_putendl(char *s);
 
 #endif
