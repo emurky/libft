@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 //REMOVE
 //# include <stdio.h>
@@ -56,7 +57,7 @@ char				*ft_strdup(const char *s1);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-//ft_putnbr_fd
+void				ft_putnbr_fd(int n, int fd);
 
 //BONUS
 //ft_lstnew
@@ -74,5 +75,6 @@ int					ft_isspace(int c);
 void				ft_putchar(char c);
 void				ft_putstr(char *s);
 void				ft_putendl(char *s);
+void				ft_putnbr(int n);
 
 #endif
