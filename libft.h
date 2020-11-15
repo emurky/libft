@@ -17,7 +17,7 @@
 # include <limits.h>
 
 //REMOVE
-//# include <stdio.h>
+# include <stdio.h>
 //# include <string.h>
 
 //PART I
@@ -48,7 +48,7 @@ void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
 
 //PART II
-//ft_substr
+char				*ft_substr(char const *s, unsigned int start, size_t len);
 //ft_strjoin
 //ft_strtrim
 //ft_split
