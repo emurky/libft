@@ -50,7 +50,7 @@ char				*ft_strdup(const char *s1);
 //PART II
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-//ft_strtrim
+char				*ft_strtrim(char const *s1, char const *set);
 //ft_split
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -77,5 +77,6 @@ void				ft_putstr(char *s);
 void				ft_putendl(char *s);
 void				ft_putnbr(int n);
 size_t				ft_nbrlen(long int n);
+int					ft_charin(char c, const char *str);
 
 #endif
