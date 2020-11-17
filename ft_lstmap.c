@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 03:38:04 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/17 03:38:06 by emurky           ###   ########.fr       */
+/*   Created: 2020/11/17 19:27:00 by emurky            #+#    #+#             */
+/*   Updated: 2020/11/17 19:27:03 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void *content)
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*newnode;
+	t_list	**newlst;
+	t_list	*ret;
 
-	if (!(newnode = (t_list *)malloc(sizeof(t_list))))
+	(void)del;
+	if (!lst)
 		return (NULL);
-	newnode->content = content;
-	newnode->next = NULL;
-	return (newnode);
+	newlst = &ret;
+	*newlst = ft_lstnew(f(lst->content));
+	while (lst->next)
+	{
+		lst = lst->next;
+		newlst = &((*newlst)->next);
+		*newlst = ft_lstnew(f(lst->content));
+	}
+	return (ret);
 }

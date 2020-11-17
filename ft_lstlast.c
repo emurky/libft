@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 03:38:04 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/17 03:38:06 by emurky           ###   ########.fr       */
+/*   Created: 2020/11/17 16:45:09 by emurky            #+#    #+#             */
+/*   Updated: 2020/11/17 16:45:12 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void *content)
+t_list		*ft_lstlast(t_list *lst)
 {
-	t_list	*newnode;
+	t_list	*ret;
 
-	if (!(newnode = (t_list *)malloc(sizeof(t_list))))
+	if (!lst)
 		return (NULL);
-	newnode->content = content;
-	newnode->next = NULL;
-	return (newnode);
+	while (lst)
+	{
+		ret = lst;
+		lst = lst->next;
+	}
+	return (ret);
 }
