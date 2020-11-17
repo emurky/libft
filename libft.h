@@ -66,8 +66,8 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 //BONUS
-//ft_lstnew
-//ft_lstadd_front
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
 //ft_lstsizej
 //ft_lstlast
 //ft_lstadd_back
@@ -76,7 +76,7 @@ void				ft_putnbr_fd(int n, int fd);
 //ft_lstiter
 //ft_lstmap
 
-//MEINE
+//MEINE ???
 int					ft_isspace(int c);
 void				ft_putchar(char c);
 void				ft_putstr(char *s);

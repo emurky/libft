@@ -1,50 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 02:55:27 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/16 02:55:29 by emurky           ###   ########.fr       */
+/*   Created: 2020/11/17 03:38:04 by emurky            #+#    #+#             */
+/*   Updated: 2020/11/17 03:38:06 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		ft_static_nbrlen(long int n)
+t_list			*ft_lstnew(void *content)
 {
-	size_t	len;
+	t_list		*newnode;
 
-	len = 1;
-	while (n /= 10)
-		len++;
-	return (len);
-}
-
-char				*ft_itoa(int n)
-{
-	char			*str;
-	size_t			len;
-	unsigned int	un;
-
-	len = ft_static_nbrlen(n);
-	if (n < 0)
-	{
-		un = -1 * n;
-		len++;
-	}
-	else
-		un = n;
-	if (!(str = malloc(sizeof(char) * (len + 1))))
+	if (!(newnode = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
-	str[len] = '\0';
-	while (len)
-	{
-		str[--len] = un % 10 + '0';
-		un /= 10;
-	}
-	if (n < 0)
-		str[0] = '-';
-	return (str);
+	newnode->content = content;
+	newnode->next = NULL;
+	return (newnode);
 }
