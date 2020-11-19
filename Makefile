@@ -21,7 +21,6 @@ NAME 			= libft.a
 CC 			= gcc
 RM 			= rm -f
 AR			= ar rcs
-RLIB   			= ranlib
 CFLAGS 			= -Wall -Wextra -Werror
 
 all:			$(NAME)
@@ -29,7 +28,6 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 			$(AR) $(NAME) $(OBJS)
-			$(RLIB) $(NAME)
 
 clean:
 			$(RM) $(OBJS) $(B_OBJS) a.out

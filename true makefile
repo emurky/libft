@@ -24,7 +24,7 @@ SRCS			= \
 				ft_strlcat.c \
 				ft_strchr.c \
 				ft_strrchr.c \
-			ft_strnstr.c \
+				ft_strnstr.c \
 				ft_strncmp.c \
 				ft_atoi.c \
 				ft_isalpha.c \
@@ -63,6 +63,7 @@ B_SRCS			= \
 				ft_lstmap.c \
 				\
 				ft_isspace_bonus.c \
+				ft_isblank_bonus.c \
 				ft_putchar_bonus.c \
 				ft_putstr_bonus.c \
 				ft_putendl_bonus.c \
@@ -77,7 +78,6 @@ NAME 			= libft.a
 CC 			= gcc
 RM 			= rm -f
 AR			= ar rcs
-RLIB   			= ranlib
 CFLAGS 			= -Wall -Wextra -Werror
 
 all:			$(NAME)
@@ -85,7 +85,6 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 			$(AR) $(NAME) $(OBJS)
-			$(RLIB) $(NAME)
 
 bonus:			$(NAME) $(B_OBJS)
 			$(AR) $(NAME) $(B_OBJS)
