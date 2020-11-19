@@ -30,7 +30,7 @@ $(NAME):		$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 clean:
-			$(RM) $(OBJS) $(B_OBJS) a.out
+			$(RM) $(OBJS) a.out
 
 
 

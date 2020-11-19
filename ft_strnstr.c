@@ -14,8 +14,8 @@
 
 char		*ft_strnstr(const char *hay, const char *needle, size_t ln)
 {
-	long long int	i;
-	long long int	intlen;
+	unsigned long int	i;
+	long long int		intlen;
 
 	intlen = ln;
 	if (!(*needle))
@@ -31,6 +31,7 @@ char		*ft_strnstr(const char *hay, const char *needle, size_t ln)
 			if (!(needle[i]))
 				return ((char *)hay);
 		}
+		intlen += i - 1;
 		if (*hay)
 			hay++;
 	}
