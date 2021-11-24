@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 02:02:50 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/18 02:02:53 by emurky           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:50:12 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *hay, const char *needle, size_t ln)
+char	*ft_strnstr(const char *hay, const char *needle, size_t ln)
 {
 	unsigned long int	i;
 	long long int		intlen;

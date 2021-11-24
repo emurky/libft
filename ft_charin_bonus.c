@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_charin.c                                        :+:      :+:    :+:   */
+/*   ft_charin_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 21:17:06 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/16 21:17:08 by emurky           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:35:54 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_charin(char c, const char *str)
+int	ft_charin(char c, const char *str)
 {
 	int		i;
 	size_t	slen;
