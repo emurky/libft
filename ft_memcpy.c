@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 04:16:24 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/09 04:16:26 by emurky           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:46:05 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*dstptr;
 	const unsigned char	*srcptr;
 
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
 	dstptr = dst;
 	srcptr = src;

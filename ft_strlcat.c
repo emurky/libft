@@ -3,40 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 05:09:08 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/10 05:09:10 by emurky           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:49:10 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+static void	concatenate_dst_src(char **dptr, const char **sptr, size_t *len)
 {
-	char		*d;
-	const char	*s;
-	size_t		dstlen;
-	size_t		len;
-
-	d = dst;
-	s = src;
-	len = dstsize;
-	while (*d && len--)
-		d++;
-	dstlen = d - dst;
-	len = dstsize - dstlen;
-	if (!len)
-		return (dstlen + ft_strlen(src));
-	while (*s)
+	while (**sptr)
 	{
-		if (len != 1)
+		if (*len != 1)
 		{
-			*d++ = *s;
-			len--;
+			**dptr = **sptr;
+			(*dptr)++;
+			(*len)--;
 		}
-		s++;
+		(*sptr)++;
 	}
-	*d = '\0';
-	return (dstlen + s - src);
+	**dptr = '\0';
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	char		*dptr;
+	const char	*sptr;
+	size_t		dstlen;
+	size_t		append_len;
+
+	if (!dst || !src)
+		return (0);
+	dptr = dst;
+	sptr = src;
+	append_len = dstsize;
+	while (append_len-- != 0 && *dptr)
+		dptr++;
+	dstlen = dptr - dst;
+	append_len = dstsize - dstlen;
+	if (!append_len)
+		return (dstlen + ft_strlen(src));
+	concatenate_dst_src(&dptr, &sptr, &append_len);
+	return (dstlen + sptr - src);
 }
