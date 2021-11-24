@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emurky <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 23:13:05 by emurky            #+#    #+#             */
-/*   Updated: 2020/11/13 23:13:08 by emurky           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:48:37 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s || c == '\0')
 	{
 		if (*s == (char)c)

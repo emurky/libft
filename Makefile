@@ -12,7 +12,7 @@
 
 
 SRCS			= \
-				ft_memset.c		ft_bzero.c		ft_memcpy.c		ft_memccpy.c \
+				ft_memset.c		ft_bzero.c		ft_memcpy.c		\
 				ft_memmove.c	ft_memchr.c		ft_memcmp.c		ft_strlen.c \
 				ft_strlcpy.c	ft_strlcat.c	ft_strchr.c		ft_strrchr.c \
 				ft_strnstr.c	ft_strncmp.c	ft_atoi.c		ft_isalpha.c \
@@ -36,7 +36,9 @@ B_SRCS			= \
 				ft_isspace_bonus.c		ft_isblank_bonus.c \
 				ft_putchar_bonus.c		ft_putstr_bonus.c \
 				ft_putendl_bonus.c		ft_putnbr_bonus.c \
-				ft_nbrlen_bonus.c		ft_charin_bonus.c
+				ft_nbrlen_bonus.c		ft_charin_bonus.c \
+				\
+				ft_memccpy_bonus.c
 
 B_OBJS			= $(B_SRCS:.c=.o)
 B_DEPS			= $(B_SRCS:.c=.d)
@@ -70,8 +72,13 @@ fclean:			clean
 
 re:				fclean all
 
+z:
+				make -C . -j12 bonus
+				make -C . clean
+				gcc -Wall -Werror -Wextra -g -fsanitize=address -o test main.c -L. -lft
+
 sc:
 				rm -rf *.o *.a */*.o */*.a */*.d *.d a.out
 
 .PHONY:			all clean fclean re bonus
-#.SILENT:
+.SILENT:
