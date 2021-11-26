@@ -66,7 +66,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+void				ft_putnbr_fd(long int n, int fd);
 
 /*
 **					BONUS
@@ -81,7 +81,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
-						void *(*f)(void *), void (*del)(void *));
+								void *(*f)(void *), void (*del)(void *));
 
 /*
 **					MEINE
@@ -92,7 +92,7 @@ int					ft_isblank(int c);
 void				ft_putchar(char c);
 void				ft_putstr(char *s);
 void				ft_putendl(char *s);
-void				ft_putnbr(int n);
+void				ft_putnbr(long int n);
 size_t				ft_nbrlen(long int n);
 int					ft_charin(char c, const char *str);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
