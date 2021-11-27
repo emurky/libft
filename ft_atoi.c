@@ -12,12 +12,14 @@
 
 #include "libft.h"
 
-static int	int_overflow(int minus)
+static int	check_int_overflow(size_t number, const char *str, int minus)
 {
-	if (minus == 1)
-		return (INT_MAX);
-	else
-		return (INT_MIN);
+	size_t	cutoff;
+	int		cutlim;
+
+	cutoff = INT_MAX / 10;
+	cutlim = INT_MAX % 10 + (minus == -1);
+	return (number > cutoff || (number == cutoff && *str - '0' > cutlim));
 }
 
 int	ft_atoi(const char *str)
@@ -37,9 +39,13 @@ int	ft_atoi(const char *str)
 	}
 	while (*str && ft_isdigit(*str))
 	{
-		if (number > INT_MAX / 10
-			|| (number == INT_MAX / 10 && *str - '0' > INT_MAX % 10))
-			return (int_overflow(minus));
+		if (check_int_overflow(number, str, minus))
+		{
+			if (minus == 1)
+				return (-1);
+			else if (minus == -1)
+				return (0);
+		}
 		number = number * 10 + *str++ - '0';
 	}
 	return ((int)(number * minus));
