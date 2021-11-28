@@ -23,8 +23,8 @@ static int	check_int_overflow(size_t number, const char *str, int minus)
 	size_t	cutoff;
 	int		cutlim;
 
-	cutoff = INT_MAX / 10;
-	cutlim = INT_MAX % 10 + (minus == -1);
+	cutoff = INT_OVRFW / 10;
+	cutlim = INT_OVRFW % 10 + (minus == -1);
 	return (number > cutoff || (number == cutoff && *str - '0' > cutlim));
 }
 

@@ -6,7 +6,7 @@
 #    By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 18:08:11 by emurky            #+#    #+#              #
-#    Updated: 2021/11/28 10:26:56 by emurky           ###   ########.fr        #
+#    Updated: 2021/11/28 10:32:51 by emurky           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,13 +72,17 @@ fclean:			clean
 
 re:				fclean all
 
-z:
+faster:
+				make -C . fclean
+				make -C . -j12 bonus
+
+test:
 				make -C . -j12 bonus
 				make -C . clean
-				gcc -Wall -Werror -Wextra -g -fsanitize=address -o test main.c -L. -lft
+				gcc -Wall -Werror -Wextra -o test main.c -L. -lft
 
 sc:
-				rm -rf *.o *.a */*.o */*.a */*.d *.d a.out 'libft '* 'test '* test
+				rm -rf *.o *.a *.d a.out 'libft '* 'test '* test
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re bonus faster test sc
 # .SILENT:
