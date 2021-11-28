@@ -22,6 +22,8 @@
 
 # ifndef __CLANG_LIMITS_H
 #  define INT_OVRFW	2147483647
+# else
+#  define INT_OVRFW	INT_MAX
 # endif
 
 /*
