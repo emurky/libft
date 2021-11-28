@@ -30,24 +30,25 @@ char	*ft_itoa(int n)
 {
 	char			*str;
 	size_t			len;
-	unsigned int	un;
+	unsigned int	abs_value;
 
 	len = ft_static_nbrlen(n);
 	if (n < 0)
 	{
-		un = -1 * n;
+		abs_value = -1 * n;
 		len++;
 	}
 	else
-		un = n;
+		abs_value = n;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	while (len)
 	{
-		str[--len] = un % 10 + '0';
-		un /= 10;
+		len--;
+		str[len] = abs_value % 10 + '0';
+		abs_value /= 10;
 	}
 	if (n < 0)
 		str[0] = '-';

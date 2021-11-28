@@ -21,6 +21,7 @@
 */
 
 # ifndef __CLANG_LIMITS_H
+#  define __CLANG_LIMITS_H
 #  define INT_MAX	2147483647
 # endif
 
@@ -63,10 +64,11 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(long int n, int fd);
+void				ft_putnbr_fd(int n, int fd);
 
 /*
 **					BONUS
@@ -102,5 +104,10 @@ void				ft_putnbr(long int n);
 size_t				ft_nbrlen(long int n);
 int					ft_charin(char c, const char *str);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
+
+// max
+// min
+// append
+// swap
 
 #endif

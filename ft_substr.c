@@ -12,40 +12,24 @@
 
 #include "libft.h"
 
-static int	substr_length_malloc(char **sub, unsigned int strlen,
-								unsigned int start, size_t len)
-{
-	if (len > strlen - start)
-	{
-		*sub = malloc(sizeof(char) * (strlen - start + 1));
-		if (!(*sub))
-			return (0);
-	}
-	else if (len <= strlen - start)
-	{
-		*sub = malloc(sizeof(char) * (len + 1));
-		if (!(*sub))
-			return (0);
-	}
-	return (1);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub;
-	unsigned int	i;
-	unsigned int	strlen;
+	char	*substring;
+	size_t	strlen;
+	size_t	sublen;
 
 	if (!s)
 		return (NULL);
 	strlen = ft_strlen(s);
 	if (start >= strlen)
-		return (ft_strdup(""));
-	if (!substr_length_malloc(&sub, strlen, start, len))
+		sublen = 0;
+	else if (len <= strlen)
+		sublen = len;
+	else
+		sublen = strlen - start;
+	substring = malloc(sizeof(char) * (sublen + 1));
+	if (!substring)
 		return (NULL);
-	i = 0;
-	while (s[start] && len--)
-		sub[i++] = s[start++];
-	sub[i] = '\0';
-	return (sub);
+	ft_strlcpy(substring, s + start, sublen + 1);
+	return (substring);
 }

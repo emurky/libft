@@ -12,45 +12,25 @@
 
 #include "libft.h"
 
-static int	ft_static_charin(char c, const char *str)
-{
-	int		i;
-	size_t	slen;
-
-	i = 0;
-	slen = ft_strlen(str) + 1;
-	while (slen--)
-	{
-		if (str[i] == c)
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*trimmed;
-	char		*trptr;
 	const char	*end;
 
 	if (!s1 || !set)
 		return (NULL);
-	while (*s1 && ft_static_charin(*s1, set) >= 0)
+	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	end = s1;
 	while (*end)
 		end++;
 	if (!(end - s1))
 		return (ft_strdup(""));
-	while (ft_static_charin(*end, set) >= 0)
+	while (ft_strchr(set, *end))
 		end--;
 	trimmed = malloc(sizeof(char) * (++end - s1 + 1));
 	if (!trimmed)
 		return (NULL);
-	trptr = trimmed;
-	while (s1 != end)
-		*trptr++ = *s1++;
-	*trptr = '\0';
+	ft_strlcpy(trimmed, s1, end - s1 + 1);
 	return (trimmed);
 }

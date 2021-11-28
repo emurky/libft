@@ -11,40 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	concatenate_dst_src(char **dptr, const char **sptr, size_t *len)
-{
-	while (**sptr)
-	{
-		if (*len != 1)
-		{
-			**dptr = **sptr;
-			(*dptr)++;
-			(*len)--;
-		}
-		(*sptr)++;
-	}
-	**dptr = '\0';
-}
+#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char		*dptr;
-	const char	*sptr;
-	size_t		dstlen;
-	size_t		append_len;
+	char	*dst_head;
 
-	if (!dst || !src)
-		return (0);
-	dptr = dst;
-	sptr = src;
-	append_len = dstsize;
-	while (append_len-- != 0 && *dptr)
-		dptr++;
-	dstlen = dptr - dst;
-	append_len = dstsize - dstlen;
-	if (!append_len)
-		return (dstlen + ft_strlen(src));
-	concatenate_dst_src(&dptr, &sptr, &append_len);
-	return (dstlen + sptr - src);
+	dst_head = dst;
+	while (dstsize && *dst)
+	{
+		dstsize--;
+		dst++;
+	}
+	if (!dstsize)
+		return (dst - dst_head + ft_strlen(src));
+	return (dst - dst_head + ft_strlcpy(dst, src, dstsize));
 }

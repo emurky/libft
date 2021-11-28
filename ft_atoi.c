@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+static int	ft_static_isspace(int c)
+{
+	return (c == ' ' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\f' || c == '\r');
+}
+
 static int	check_int_overflow(size_t number, const char *str, int minus)
 {
 	size_t	cutoff;
@@ -29,7 +35,7 @@ int	ft_atoi(const char *str)
 
 	number = 0;
 	minus = 1;
-	while (ft_isspace(*str))
+	while (ft_static_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
