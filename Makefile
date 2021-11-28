@@ -6,7 +6,7 @@
 #    By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 18:08:11 by emurky            #+#    #+#              #
-#    Updated: 2021/11/28 09:25:24 by emurky           ###   ########.fr        #
+#    Updated: 2021/11/28 10:26:56 by emurky           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ B_SRCS			= \
 				ft_putchar_bonus.c		ft_putstr_bonus.c \
 				ft_putendl_bonus.c		ft_putnbr_bonus.c \
 				ft_nbrlen_bonus.c		ft_charin_bonus.c \
-				\
+				ft_max_bonus.c			ft_min_bonus.c \
 				ft_memccpy_bonus.c
 
 B_OBJS			= $(B_SRCS:.c=.o)
@@ -48,7 +48,7 @@ NAME 			= libft.a
 CC 				= gcc
 RM 				= rm -f
 AR				= ar -rcs
-CFLAGS 			= -Wall -Wextra -Werror -g #-fsanitize=address
+CFLAGS 			= -Wall -Wextra -Werror
 CPPFLAGS		= -I. -MMD
 
 all:			$(NAME)
@@ -81,4 +81,4 @@ sc:
 				rm -rf *.o *.a */*.o */*.a */*.d *.d a.out 'libft '* 'test '* test
 
 .PHONY:			all clean fclean re bonus
-.SILENT:
+# .SILENT:

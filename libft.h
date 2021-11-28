@@ -6,7 +6,7 @@
 /*   By: emurky <emurky@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:05:30 by emurky            #+#    #+#             */
-/*   Updated: 2021/11/28 09:25:12 by emurky           ###   ########.fr       */
+/*   Updated: 2021/11/28 10:25:23 by emurky           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,7 @@ void				ft_putnbr(long int n);
 size_t				ft_nbrlen(long int n);
 int					ft_charin(char c, const char *str);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
-
-// max
-// min
-// append
-// swap
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 
 #endif
