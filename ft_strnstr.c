@@ -32,7 +32,8 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t ln)
 				return ((char *)hay);
 		}
 		intlen += i - 1;
-		hay++;
+		if (*hay)
+			hay++;
 	}
 	return (NULL);
 }

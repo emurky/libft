@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *str, int c)
 {
 	char	*ret;
 
-	if (!str)
-		return (NULL);
 	ret = NULL;
 	while (1)
 	{

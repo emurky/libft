@@ -29,9 +29,9 @@ OBJS 			= $(SRCS:.c=.o)
 DEPS			= $(SRCS:.c=.d)
 
 B_SRCS			= \
-				ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c \
-				ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c \
-				ft_lstclear.c	ft_lstiter.c		ft_lstmap.c \
+				ft_lstnew.c				ft_lstadd_front.c		ft_lstsize.c \
+				ft_lstlast.c			ft_lstadd_back.c		ft_lstdelone.c \
+				ft_lstclear.c			ft_lstiter.c			ft_lstmap.c \
 				\
 				ft_isspace_bonus.c		ft_isblank_bonus.c \
 				ft_putchar_bonus.c		ft_putstr_bonus.c \
@@ -81,4 +81,4 @@ sc:
 				rm -rf *.o *.a */*.o */*.a */*.d *.d a.out 'libft '* 'test '* test
 
 .PHONY:			all clean fclean re bonus
-# .SILENT:
+.SILENT:
