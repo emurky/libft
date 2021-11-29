@@ -38,7 +38,7 @@ B_SRCS			= \
 				ft_putendl_bonus.c		ft_putnbr_bonus.c \
 				ft_nbrlen_bonus.c		ft_charin_bonus.c \
 				ft_max_bonus.c			ft_min_bonus.c \
-				ft_memccpy_bonus.c
+				ft_memccpy_bonus.c		ft_itoa_base_bonus.c
 
 B_OBJS			= $(B_SRCS:.c=.o)
 B_DEPS			= $(B_SRCS:.c=.d)

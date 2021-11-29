@@ -107,5 +107,6 @@ int					ft_charin(char c, const char *str);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 int					ft_max(int a, int b);
 int					ft_min(int a, int b);
+char				*ft_itoa_base(long int n, size_t base);
 
 #endif
