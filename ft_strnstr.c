@@ -14,26 +14,18 @@
 
 char	*ft_strnstr(const char *hay, const char *needle, size_t ln)
 {
-	size_t			i;
-	long long int	intlen;
+	size_t	needle_len;
 
-	intlen = ln;
 	if (!(*needle))
 		return ((char *)hay);
-	while (*hay && intlen > 0)
+	needle_len = ft_strlen(needle);
+	while (*hay && needle_len <= ln)
 	{
-		while (*hay && *hay != *needle && intlen-- > 0)
-			hay++;
-		i = 0;
-		while (hay[i] && needle[i] && hay[i] == needle[i] && intlen-- > 0)
-		{
-			i++;
-			if (!(needle[i]))
-				return ((char *)hay);
-		}
-		intlen += i - 1;
-		if (*hay)
-			hay++;
+		if (ln-- < 1 || !(*hay))
+			return (NULL);
+		if (!ft_strncmp(hay, needle, needle_len))
+			return ((char *)hay);
+		hay++;
 	}
 	return (NULL);
 }
