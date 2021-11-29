@@ -28,9 +28,9 @@ static size_t	ft_static_nbrlen(long int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	len;
-	size_t	abs_value;
+	char			*str;
+	size_t			len;
+	unsigned int	abs_value;
 
 	len = ft_static_nbrlen(n);
 	if (n < 0)
